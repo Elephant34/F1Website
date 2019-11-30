@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>{% block title %}F1 KES{% endblock %}</title>
+
+        <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+        {% block HTMLheader %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}
+
+        {% endblock %}
+    </body>
+</html>

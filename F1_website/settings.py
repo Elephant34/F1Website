@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'F1website.apps.F1WebsiteConfig'
+    'F1website.apps.F1WebsiteConfig',
+    'Sendemail.apps.SendemailConfig',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

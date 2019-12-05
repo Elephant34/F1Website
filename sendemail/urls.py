@@ -4,6 +4,6 @@ from django.urls import path
 from .views import emailView, successView
 
 urlpatterns = [
-    path('email/', emailView, name='email'),
+    path('contact-us/', emailView, name='contact-us'),
     path('success/', successView, name='success'),
 ]

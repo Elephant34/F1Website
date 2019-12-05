@@ -124,9 +124,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
 
-EMAIL_HOST_USER = config("EMAIL_HOST_USER", default="")
-EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="")
-EMAIL_USE_TLS = False
-EMAIL_PORT = 1025
+MAILGUN_ACCESS_KEY = config("MAILGUN_ACCESS_KEY", default="")
+MAILGUN_SERVER_NAME = config("MAILGUN_SERVER_NAME", default="")

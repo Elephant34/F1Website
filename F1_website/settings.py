@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'F1website.apps.F1WebsiteConfig',
     'sendemail.apps.SendemailConfig',
+    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -124,7 +125,10 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
-EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
+EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
+DEFAULT_FROM_EMAIL =config("DEFAULT_FROM_EMAIL", default="")
 
-MAILGUN_ACCESS_KEY = config("MAILGUN_ACCESS_KEY", default="")
-MAILGUN_SERVER_NAME = config("MAILGUN_SERVER_NAME", default="")
+ANYMAIL = {
+    "MAILGUN_API_KEY": config("MAILGUN_ACCESS_KEY", default=""),
+    "MAILGUN_SENDER_DOMAIN": config("MAILGUN_SERVER_NAME", default="")
+}
